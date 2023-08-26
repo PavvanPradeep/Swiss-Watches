@@ -3,7 +3,7 @@ import React from 'react';
 export default function App() {
   return (
     <footer
-      className="bg-[#141414] ext-center text-neutral-600 dark:text-neutral-200 lg:text-left">
+      className="bg-[#101010] ext-center text-neutral-600 dark:text-neutral-200 lg:text-left">
       <div
         className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
         <div className="mr-12 flex lg:block">
@@ -254,7 +254,7 @@ export default function App() {
         </div>
       </div>
 
-      <div className="bg-black p-6 text-center">
+      <div className="bg-[#151515] p-6 text-center">
         <span>© 2023 Copyright:</span>
         <a
           className="font-semibold text-neutral-600 dark:text-neutral-400"
