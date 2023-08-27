@@ -11,6 +11,12 @@ export default function App() {
       <Hero/>
       {/* <Collections/> */}
       {/* <Login/> */}
+      {/* <div className='video-container'>
+        <video autoPlay loop muted>
+          <source src='src\assets\The new Rolex Explorer.mp4' type='video/mp4'/>
+        </video>
+      </div> */}
+      <Login/>
       <Navbar/>
       <Footer/>
     </>
