@@ -3,11 +3,12 @@ import React from 'react';
 export default function App() {
   return (
     <footer
-      className="bg-[#101010] ext-center text-neutral-600 dark:text-neutral-200 lg:text-left">
+      className="bg-[#101010] text-center text-neutral-600 dark:text-neutral-200 lg:text-left">
       <div
         className="flex items-center justify-center border-b-2 border-neutral-200 p-6 dark:border-neutral-500 lg:justify-between">
-        <div className="mr-12 flex lg:block">
-          <span className="mr-12">Find the nearest store</span>
+        <div className="mr-12 flex">
+          <svg  className="mr-2 flex" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="19px" height="19px" id="Map"><path d="m24 47.759-.823-1.191C22.558 45.671 8 24.499 8 16 8 7.178 15.178 0 24 0s16 7.178 16 16c0 8.499-14.558 29.671-15.177 30.568L24 47.759zM24 2c-7.72 0-14 6.28-14 14 0 6.787 10.885 23.555 14 28.214C27.115 39.555 38 22.787 38 16c0-7.72-6.28-14-14-14z" fill="#ffffff" class="color000000 svgShape"></path><path d="M24 23c-3.859 0-7-3.14-7-7s3.141-7 7-7 7 3.14 7 7-3.141 7-7 7zm0-12c-2.757 0-5 2.243-5 5s2.243 5 5 5 5-2.243 5-5-2.243-5-5-5z" fill="#ffffff" class="color000000 svgShape"></path></svg>
+         <span className="mr-12 flex">Find the nearest store</span>
         </div>
         <div className="flex items-center justify-center ">
           <div
@@ -258,7 +259,6 @@ export default function App() {
         <span>© 2023 Copyright:</span>
         <a
           className="font-semibold text-neutral-600 dark:text-neutral-400"
-          href="https://tailwind-elements.com/"
         >Swiss Collections</a>
       </div>
     </footer>
