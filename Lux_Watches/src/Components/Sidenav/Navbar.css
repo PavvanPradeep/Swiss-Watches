@@ -1,0 +1,57 @@
+.other-nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    color: #919191;
+    z-index: 1000;
+    height: 100px; /* Set a specific height */
+}
+
+.other-nav > div {
+    padding: 20px; /* Adjust padding as needed */
+    cursor: pointer;
+}
+
+.logo-container {
+    display: flex;
+    margin-bottom: 35px;
+    justify-content: center; 
+    align-items: center;  
+    height: 100px; 
+    color: #919191;
+}
+
+.logo {
+    position: fixed;
+    top: 50px;
+    cursor: pointer;
+    font-size: 24px; /* Adjust font size as needed */
+}
+
+
+/* .other-nav .search{
+    cursor: pointer;
+}
+
+ .other-nav .search:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+  
+
+.other-nav .search:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 2px;
+    transform: scaleX(0);
+    bottom: 0;
+    right: 1px;
+  
+    background-color: #919191;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  } */
