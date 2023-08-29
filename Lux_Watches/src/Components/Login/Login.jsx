@@ -10,15 +10,15 @@ const Login = () => {
     };
 
     return (
-        <div className='login-page'>
             <div className='form-container'>
-                <div className='login'>
-                    <p>LOGIN</p>
-                </div>
+
                 <form action=''>
+                    <div className='login'>
+                        <p>LOGIN</p>
+                    </div>
                     <div className='form-boxes'>
                         <label htmlFor='email'>Email</label>
-                        <input type='text' name='email' id='email' placeholder='Enter your email address'/>
+                        <input type='text' name='email' id='email' className='bg-slate-50' placeholder='Enter your email address'/>
                     </div>
                     <div className='form-boxes'>
                         <label htmlFor='password'>Password</label>
@@ -32,10 +32,9 @@ const Login = () => {
                     <div className='forgot-password'>
                         <a href='google.com'>Forgot Password?</a>
                     </div>
-                    <button className='button' type='submit'>LOGIN</button>
+                    <button className='button bg-black' type='submit'>LOGIN</button>
                 </form>
             </div>
-        </div>
     );
 };
 

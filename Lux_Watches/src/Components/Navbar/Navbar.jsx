@@ -1,17 +1,17 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './Sidenav.css';
-import './Navbar.css'
+import './Navbar.css';
 
-const Sidenav = () => {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-  const sidenavRef = useRef(null);
-  const customIconRef = useRef(null);
+  // The state of the sidenav is used to check for further conditions
+  const Navbar = () => {
+    const [sidebarOpen, setSidebarOpen] = useState(false);
+    const sidenavRef = useRef(null);
+    const customIconRef = useRef(null);
 
-  const toggleNav = () => {
-    setSidebarOpen(!sidebarOpen);
-  };
+    const toggleNav = () => {
+      setSidebarOpen(!sidebarOpen);
+    };
 
-  // This is for clicking on the screen and the sidenav closes when open
+  // Once you click on the screen and the sidenav closes when open
   const handleOutsideClick = (event) => {
     if (
       sidenavRef.current &&
@@ -23,7 +23,7 @@ const Sidenav = () => {
     }
   };
 
-  // This is for checking and applying the effects
+  // This is for checking and applying the effects, when the sidebar is open, it handles the outside click
   useEffect(() => {
     if (sidebarOpen) {
       document.addEventListener('click', handleOutsideClick);
@@ -36,55 +36,35 @@ const Sidenav = () => {
   }, [sidebarOpen]);
 
   return (
-    <div>
-      <div
-        className="custom-icon"
-        onClick={toggleNav}
-        ref={customIconRef}
-      >
-        <div
-          id="nav-icon"
-          className={`nav-icon ${sidebarOpen ? 'open hover-effect' : 'hover-effect'}`}
-        >
-          <span></span>
-          <span></span>
+    /* container to fix the navbar at the top using absolute */
+    <div className='navbar-container'>
+      <div className='nav-top'>
+        <div className='nav-left'>
+          <div className='nav-text menu' onClick={toggleNav} ref={customIconRef}>
+            <div>MENU</div>
+          </div>
         </div>
 
-        <div
-          className={`menu-text ${sidebarOpen ? 'fade-out' : 'fade-in'}`}
-        >
-          MENU
+      <div className='nav-center'>
+        <div className='nav-text logo'>
+          <div>LOGO</div>
         </div>
-
       </div>
-
-      <div className='logo-container'>
-        <div className='logo'>
-                LOGO
-            </div>
-      </div>
-
       
-      <div className='other-nav'>
-
-          <div className='search'>
-            SEARCH
+        <div className='nav-right'>
+          <div className='nav-text'>
+            <div>SEARCH</div>
           </div>
-          <div className='collections'>
-            COLLECTIONS
+          <div className='nav-text'>
+            <div>COLLECTIONS</div>
           </div>
         </div>
+      </div>
 
-      <div
-        ref={sidenavRef}
-        id="mySidenav"
-        className={`sidenav ${sidebarOpen ? 'open' : ''}`}
-      >
+
+      <div ref={sidenavRef} id="mySidenav" className={`sidenav ${sidebarOpen ? 'open' : ''}`}>
         <div className="nav-icon-container" onClick={toggleNav}>
-          <div
-            id="nav-icon"
-            className={`nav-icon ${sidebarOpen ? 'open' : ''}`}
-          >
+          <div id="nav-icon" className={`nav-icon ${sidebarOpen ? 'open' : ''}`}>
             <span></span>
             <span></span>
           </div>
@@ -126,4 +106,4 @@ const Sidenav = () => {
   );
 };
 
-export default Sidenav;
+export default Navbar;
