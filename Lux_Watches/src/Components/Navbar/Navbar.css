@@ -81,8 +81,6 @@
   pointer-events: none;  /* Display pointer events when it fades out */
 }
 
-
-
 .sidebar-section2 > div{
   position: absolute;
   width: 100px;
@@ -118,34 +116,57 @@ pointer-events: none;
 opacity: 1;
 pointer-events: auto;
 }
+/* End of Sidenav */
 
-/* Styling for the custom menu icon */
+.logo{
+  left: 65%;
+}
+
+.navbar-container {
+  position: absolute; 
+  z-index: 1; 
+  width: 100%; 
+}
+.nav-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.nav-left,
+.nav-center,
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.nav-center {
+  align-self: center;
+  margin: auto;
+}
+
 .custom-icon {
   display: flex;
-  flex-direction: row;
-  position: absolute;
-  top: 16px;
-  left: 16px;
-  z-index: 2;
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: center; /* Align items vertically */
+  padding: 0 20px; /* Add some padding to the custom icon container */
 }
 
-
-
-
-
-.menu-text {
+.nav-text {
   color: #919191;
-  font-size: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
   position: relative;
   cursor: pointer;
-  margin-left: 120px;  
-  margin-top: 45px;
-  float: right;
-  transition: opacity 0.5s; /* Add a transition for fading effect */
-  opacity: 1; /* Initial opacity */
+  transition: opacity 0.5s;
+  opacity: 1;
+  margin: 80px 100px; 
 }
 
-.menu-text:after {
+.nav-text:after {
   content: '';
   position: absolute;
   width: 100%;
@@ -159,28 +180,30 @@ pointer-events: auto;
   transition: transform 0.25s ease-out;
 }
 
-.menu-text:hover::after {
+.nav-text:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
 
 
-.menu-text.fade-in {
+.nav-text.fade-in {
   transition: 3s;
   opacity: 1; /* Opacity when fading in */
 }
 
-.menu-text.fade-out {
+.nav-text.fade-out {
   opacity: 0; /* Opacity when fading out */
 }
 
 
+
+/* Nav icon */ 
 #nav-icon {
   left: 20px;
 width: 60px;
-height: 45px;
+height: 50px;
 position: fixed;
-margin: 50px auto;
+margin: 57px auto;
 cursor: pointer;
 }
 
@@ -211,7 +234,6 @@ top: 36px;
   top: 36px;
   }
   
-
 
 #nav-icon.open span:nth-child(1) {
 top: 18px;
