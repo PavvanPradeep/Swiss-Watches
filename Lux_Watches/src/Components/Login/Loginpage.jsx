@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer'
 export default function Loginpage() {
   return (
     <>
-      <Navbar/>
+      {/* <Navbar/> */}
       <Login/>
       <Footer/>
     </>

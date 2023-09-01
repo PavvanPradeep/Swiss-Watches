@@ -57,7 +57,7 @@
 .form-boxes input {
     border: none;
     outline: none;
-    margin-top: -10px;
+    margin-top: -0.625rem;
     background-color: rgb(248 250 252);
     color: rgb(0, 0, 0);
 }
@@ -99,7 +99,7 @@
 
 
 .forgot-password {
-    margin: 10px 0; /* Adjust vertical margin */
+    margin: 0.625rem 0; /* Adjust vertical margin */
 }
 
 /* submit button */
@@ -107,7 +107,7 @@
     width: 500px; /* Adjust button width */
     height: 60px;
     text-align: center;
-    padding-left: 10px;
+    padding-left: 0.625rem;
     cursor: pointer;
     background-color: black;
     border: none;
