@@ -37,6 +37,8 @@
 .sidenav.open {
   width: 500px;
   opacity: 0.8;
+  /* backdrop-filter: blur(4px) saturate(150%);  
+  background-color: rgba(0,0,0,0.5); */
 }
 
 .sidebar-section1{
@@ -53,7 +55,7 @@
   background: white;
   width: 450px;
   top: 50%;
-  left: 20px;
+  left: 1.25rem;
   transform: translateY(-50%);
 }
 
@@ -73,7 +75,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start; /* Adjust as needed */
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .sidebar-section2.fade-out{
@@ -84,7 +86,7 @@
 .sidebar-section2 > div{
   position: absolute;
   width: 100px;
-  margin: 10px;
+  margin: 0.625rem;
   text-align: center;
 }
 
@@ -118,12 +120,9 @@ pointer-events: auto;
 }
 /* End of Sidenav */
 
-.logo{
-  left: 65%;
-}
-
+/* Navbar */
 .navbar-container {
-  position: absolute; 
+  position: fixed; 
   z-index: 1; 
   width: 100%; 
 }
@@ -132,50 +131,78 @@ pointer-events: auto;
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 .nav-left,
 .nav-center,
 .nav-right {
+  /* position: relative; */
   display: flex;
   align-items: center;
 }
 
 .nav-center {
-  align-self: center;
-  margin: auto;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+/* hiding search and collections on screen width reduction */
+@media only screen and (max-width: 800px) {
+  .search {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .collections {
+    display: none;
+  }
 }
 
 .custom-icon {
   display: flex;
-  justify-content: space-between; /* Distribute items evenly along the main axis */
-  align-items: center; /* Align items vertically */
-  padding: 0 20px; /* Add some padding to the custom icon container */
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 0 1.25rem; 
 }
 
 .nav-text {
-  color: #919191;
-  font-size: 20px;
+  color: #ffffff;
+
+  font-size: 1.25rem;  /* use em */
   display: flex;
   justify-content: center;
   position: relative;
   cursor: pointer;
   transition: opacity 0.5s;
   opacity: 1;
-  margin: 80px 100px; 
+  margin: 3.125rem 2rem; 
+}
+.menu-text {
+  color: #ffffff;
+  font-size: 1.25rem;  /* use em */
+  display: flex;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: opacity 0.5s;
+  opacity: 1;
+  margin: 3.125rem 4rem; 
 }
 
 .nav-text:after {
   content: '';
   position: absolute;
   width: 100%;
-  height: 2px;
+  height: 0.125rem;
   transform: scaleX(0);
   bottom: 0;
-  right: 1px;
+  right: 0.063rem;
 
-  background-color: #919191;
+  background-color: #ffffff;
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -185,34 +212,52 @@ pointer-events: auto;
   transform-origin: bottom left;
 }
 
+.menu-text:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 0.125rem;
+  transform: scaleX(0);
+  bottom: 0;
+  right: 0.063rem;
+
+  background-color: #ffffff;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.menu-text:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
 .nav-text.fade-in {
   transition: 3s;
-  opacity: 1; /* Opacity when fading in */
+  opacity: 1; 
 }
 
 .nav-text.fade-out {
-  opacity: 0; /* Opacity when fading out */
+  opacity: 0; 
 }
 
 
 
 /* Nav icon */ 
 #nav-icon {
-  left: 20px;
-width: 60px;
-height: 50px;
+  left: 1.25rem;
+width: 3.75rem;
+height: 3.125rem;
 position: fixed;
-margin: 57px auto;
+margin: 2.4rem auto;
 cursor: pointer;
 }
 
 #nav-icon span {
 display: block;
 position: absolute;
-height: 5px;
-width: 100%;
-background: #919191;
+height: 0.313rem;
+width: 75%;
+background: #ffffff;
 opacity: 1;
 left: 0;
 transition: .25s ease-in-out;
@@ -223,16 +268,16 @@ top: 0px;
 }
 
 #nav-icon span:nth-child(2) {
-top: 36px;
+top: 18px;
 }
 
 #nav-icon:hover span:nth-child(1) {
   top: 0px;
-  }
+}
   
-  #nav-icon:hover span:nth-child(2) {
+#nav-icon:hover span:nth-child(2) {
   top: 36px;
-  }
+}
   
 
 #nav-icon.open span:nth-child(1) {
@@ -257,4 +302,9 @@ top: 18px;
 }
 .custom-icon:hover #nav-icon span:nth-child(2) {
   top: 27px;
+} */
+
+
+/* .blur-effect {
+  filter: blur(5px);
 } */

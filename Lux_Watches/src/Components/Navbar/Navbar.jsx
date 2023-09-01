@@ -41,23 +41,23 @@ import './Navbar.css';
     <div className='navbar-container'>
       <div className='nav-top'>
         <div className='nav-left'>
-          <div className='nav-text menu' onClick={toggleNav} ref={customIconRef}>
+          <div className='menu-text' onClick={toggleNav} ref={customIconRef}>
             <div>MENU</div>
           </div>
         </div>
 
       <div className='nav-center'>
-        <div className='nav-text logo'>
+        <div className='nav-text'>
           <div>LOGO</div>
         </div>
       </div>
       
         <div className='nav-right'>
           <div className='nav-text'>
-            <div>SEARCH</div>
+            <div className='search'>SEARCH</div>
           </div>
           <div className='nav-text'>
-            <div>COLLECTIONS</div>
+            <div className='collections'>COLLECTIONS</div>
           </div>
         </div>
       </div>
