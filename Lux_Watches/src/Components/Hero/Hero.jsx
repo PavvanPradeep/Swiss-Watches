@@ -8,10 +8,11 @@ export default function Hero() {
         <div className='relative'>
             <video src={vid1} type="video/mp4" autoPlay loop muted ></video>
             <Collections/>
-            <video src={vid2} type="video/mp4" autoPlay loop muted width="1500"></video>
+            <video className="w-full" src={vid2} type="video/mp4" autoPlay loop muted></video>
         </div>
         
     </>
   )
 }
 
+// 
