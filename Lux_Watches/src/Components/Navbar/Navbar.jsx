@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Navbar.css';
 
+
   // The state of the sidenav is used to check for further conditions
   const Navbar = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
