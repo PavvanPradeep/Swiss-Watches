@@ -2,6 +2,7 @@ import React from 'react';
 import vid1 from "../../assets/tag.mp4";
 import vid2 from "../../assets/rm.mp4";
 import Collections from '../Collections/Collections';
+import New_Arrivals from '../New_Arrivals/New_Arrivals';
 
 export default function Hero() {
   return (
@@ -44,7 +45,7 @@ export default function Hero() {
         </div>
       </div>
       
-
+      <New_Arrivals/>
     </div>
   );
 }
