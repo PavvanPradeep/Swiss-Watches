@@ -7,7 +7,7 @@ import Footer from '../Footer/Footer'
 export default function Loginpage() {
   return (
     <>
-      {/* <Navbar/> */}
+      <Navbar navPosition={{position: 'relative'}} navTextStyle={{color: 'black'}} navBGColor='black' navIcon={{background: 'black'}}/>
       <Login/>
       <Footer/>
     </>

@@ -18,7 +18,7 @@ export default function New_Arrivals() {
           style={{x:450}}
           dragConstraints={{ left: -500, right: 470}}>
             
-        <div className="flex min-h-screen items-center justify-center bg-neutral-1000 -mb-14 -mt-14 "> 
+        <div className="flex min-h-screen items-center justify-center bg-neutral-1000 -mb-14 -mt-14"> 
             {/* <div className="grid grid-cols-1 gap-7 md:grid-cols-3 lg:grid-cols-4"> */}
             <div className="flex gap-8">
                 <Cards name='hello world' pfp={img1} desc='qweretystsgsg'/>

@@ -1,12 +1,21 @@
 import React from 'react';
+import Navbar from '../Navbar/Navbar'
+import Celeb from '../Celeb/Celeb'
+import Footer from '../Footer/Footer'
 import vid1 from "../../assets/tag.mp4";
 import vid2 from "../../assets/rm.mp4";
 import Collections from '../Collections/Collections';
 import New_Arrivals from '../New_Arrivals/New_Arrivals';
 
+import 'tailwindcss/tailwind.css'
+
 export default function Hero() {
   return (
     <div className="relative">
+
+      {/* Importing Navbar with props */}
+      <Navbar navPosition={{position: 'absoulute'}} navTextStyle={{color: 'white'}} navBGColor='white' navIcon={{background: 'white'}}/>
+
       <div className="relative lg:w-full ">
         <video src={vid1} type="video/mp4" autoPlay loop muted></video>
         <div className="absolute inset-24 flex flex-col items-center justify-center h-full text-center">
@@ -46,6 +55,11 @@ export default function Hero() {
       </div>
       
       <New_Arrivals/>
+
+      {/* Importing Celeb and Footer */}
+      <Celeb/>
+
+      <Footer/>
     </div>
   );
 }

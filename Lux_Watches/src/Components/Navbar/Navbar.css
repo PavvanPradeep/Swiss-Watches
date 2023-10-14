@@ -202,7 +202,7 @@ pointer-events: auto;
   bottom: 0;
   right: 0.063rem;
 
-  background-color: #ffffff;
+  background-color: var(--after-bg-color,#000000);
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
@@ -221,7 +221,7 @@ pointer-events: auto;
   bottom: 0;
   right: 0.063rem;
 
-  background-color: #ffffff;
+  background-color: var(--after-bg-color,#000000);  /* var is being used for psuedo-elements */
   transform-origin: bottom right;
   transition: transform 0.25s ease-out;
 }
