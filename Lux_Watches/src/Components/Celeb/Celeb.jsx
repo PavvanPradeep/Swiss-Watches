@@ -1,30 +1,35 @@
-import React from 'react'
-import img1 from "../../assets/ryan-gosling.avif"
-import img2 from "../../assets/margot_rm.jpeg"
+import React from 'react';
+import img1 from "../../assets/ryan-gosling.avif";
+import img2 from "../../assets/margot_rm.jpeg";
+
 export default function Celeb() {
   return (
     <>  
-    <div className='flex'>
-      <div className='container relative'>
-          <img className="object-cover aspect-auto object-left"src={img1} alt="Watches for men" height={730}></img>
-          <div className='flex justify-center text-center'>
-            <p className='absolute bottom-1/3 text-white lg:text-4xl font-bold'>WATCHES FOR MEN</p>
-            <p className='absolute bottom-1/4 text-white text-xs hover:underline cursor-pointer'> VIEW ALL WATCHES</p>
+      <div className='flex'>
+        <div className='relative' style={{ height: '75vh' }}>
+          <img className="object-cover w-full h-full" src={img1} alt="Watches for men" />
+          <div className='absolute inset-0 flex flex-col justify-center items-center'>
+            <p className='text-white text-4xl font-bold'>WATCHES FOR MEN</p>
+            <p className='text-white text-xs hover:underline cursor-pointer'>VIEW ALL WATCHES</p>
           </div>
-      </div> 
-      <div className='container relative'>
-        <img className="object-cover aspect-auto object-right" src={img2} alt="Watches for women" height={730}></img> 
-        <div className='flex justify-center text-center text-slate-50 '>
-            <h2 className='absolute bottom-1/3 lg:text-4xl font-bold'>WATCHES FOR WOMEN</h2>
-            <div className='flex justify-center text-center'>
-              <p className='absolute bottom-1/4 text-xs hover:underline cursor-pointer'>VIEW ALL WATCHES</p>    
-            </div>
+        </div>
+        <div className='relative' style={{ height: '75vh' }}>
+          <img className="object-cover w-full h-full" src={img2} alt="Watches for women" />
+          <div className='absolute inset-0 flex flex-col justify-center items-center'>
+            <h2 className='text-white text-4xl font-bold'>WATCHES FOR WOMEN</h2>
+            <p className='text-white text-xs hover:underline cursor-pointer'>VIEW ALL WATCHES</p>
+          </div>
         </div>
       </div>
-    </div>
     </>
-  )
+  );
 }
+
+
+
+
+
+
 // ADD svg
 {/* <div className='flex space-x-4'>
   <div>

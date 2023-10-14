@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { useNavigate} from "react-router-dom"
 import './Navbar.css';
 
 
+// Props are passed as parameters
+export default function Navbar({navPosition,navTextStyle,navIcon,navBGColor}){
+
   // The state of the sidenav is used to check for further conditions
-  const Navbar = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const sidenavRef = useRef(null);
     const customIconRef = useRef(null);
@@ -12,7 +15,7 @@ import './Navbar.css';
       setSidebarOpen(!sidebarOpen);
     };
 
-  // Once you click on the screen and the sidenav closes when open
+  // Once you click on any part of the outside screen and the sidenav closes when open
   const handleOutsideClick = (event) => {
     if (
       sidenavRef.current &&
@@ -36,75 +39,98 @@ import './Navbar.css';
     };
   }, [sidebarOpen]);
 
+
+  // Navigating to collections
+  const navigate = useNavigate();
+
+  const navigateToCollections = () => {
+    navigate('/collections');
+  };
+
+  // Navigatet to home
+  const navigateToHome = () => {
+    navigate('/');
+  };
+
+  // This specific style takes care of the underline color
+  const navStyle = {
+    ...navTextStyle,
+    '--after-bg-color': navBGColor
+  }
+
+  
+
   return (
+
     /* container to fix the navbar at the top using absolute */
-    <div className='navbar-container'>
+    <div className='navbar-container' style={navPosition}>
       <div className='nav-top'>
         <div className='nav-left'>
-          <div className='menu-text' onClick={toggleNav} ref={customIconRef}>
-            <div>MENU</div>
-          </div>
+        <div className='menu-text' style={navStyle} onClick={toggleNav} ref={customIconRef}>
+          <div>MENU</div>
+        </div>
+
         </div>
 
       <div className='nav-center'>
-        <div className='nav-text'>
-          <div>LOGO</div>
+        <div className='nav-text' style={navStyle}>
+          <button className='logo' onClick={navigateToHome}>LOGO</button>
         </div>
       </div>
       
         <div className='nav-right'>
-          <div className='nav-text'>
+          <div className='nav-text' style={navStyle}>
             <div className='search'>SEARCH</div>
           </div>
-          <div className='nav-text'>
-            <div className='collections'>COLLECTIONS</div>
+          <div className='nav-text' style={navStyle}>
+            <button className='collections' onClick={navigateToCollections}>COLLECTIONS</button>
           </div>
         </div>
       </div>
-
 
       <div ref={sidenavRef} id="mySidenav" className={`sidenav ${sidebarOpen ? 'open' : ''}`}>
-        <div className="nav-icon-container" onClick={toggleNav}>
-          <div id="nav-icon" className={`nav-icon ${sidebarOpen ? 'open' : ''}`}>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
+  <div className="nav-icon-container" onClick={toggleNav}>
+    <div id="nav-icon" className={`nav-icon ${sidebarOpen ? 'open' : ''}`}>
+      <span style={navIcon}></span>
+      <span style={navIcon}></span>
+    </div>
+  </div>
 
-        <div className='sidebar-section1'>
-          <div className={`links ${sidebarOpen ? 'fade-in' : 'fade-out'}`} >
-            <a href="https://www.google.com">THE BRAND</a>
-            <a href="https://www.example.com">COLLECTIONS</a>
-            <a href="https://www.openai.com">STORE</a>
-            <a href="https://www.github.com">EVENTS</a>
-          </div>
-        </div>
+  <div className='sidebar-section1'>
+    <div className={`links ${sidebarOpen ? 'fade-in' : 'fade-out'}`} >
+      <a href="https://www.google.com">THE BRAND</a>
+      <a className='collections-s' onClick={navigateToCollections}>COLLECTIONS</a>
+      <a href="https://www.openai.com">STORE</a>
+      <a href="https://www.github.com">EVENTS</a>
+    </div>
+  </div>
 
-        <div className={`sidebar-section2 ${sidebarOpen ? '' : 'fade-out'}`}>
-          <div className='test-element-container'>
-            <div className='test-element'>
-              Test
-            </div>
-            <div className='test-element'>
-              Test
-            </div>
-            <div className='test-element'>
-              Test
-            </div>
-            <div className='test-element'>
-              Test
-            </div>
-            <div className='test-element'>
-              Test
-            </div>
-            <div className='test-element'>
-              Test
-            </div>
-          </div>
-        </div>
+  <div className={`sidebar-section2 ${sidebarOpen ? '' : 'fade-out'}`}>
+    <div className='test-element-container'>
+      <div className='test-element'>
+        Test
       </div>
+      <div className='test-element'>
+        Test
+      </div>
+      <div className='test-element'>
+        Test
+      </div>
+      <div className='test-element'>
+        Test
+      </div>
+      <div className='test-element'>
+        Test
+      </div>
+      <div className='test-element'>
+        Test
+      </div>
+    </div>
+  </div>
+</div>
+
+
     </div>
   );
 };
 
-export default Navbar;
