@@ -8,8 +8,9 @@ export default function WatchesPage({ backgroundColor }) {
       <div style={{ backgroundColor }}>
         <Navbar navPosition={{position: 'relative'}} navTextStyle={{color: 'black'}} navBGColor='black' navIcon={{background: 'black'}}/>
         <CardsCollection/>
-        <Footer/>
-      
+        <div className="mt-16">
+          <Footer/>
+        </div>
       </div>
     )
   }
