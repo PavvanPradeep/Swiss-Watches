@@ -47,6 +47,10 @@ export default function Navbar({navPosition,navTextStyle,navIcon,navBGColor}){
     navigate('/collections');
   };
 
+  const navigateTologin = () => {
+    navigate('/login');
+  };
+
   // Navigatet to home
   const navigateToHome = () => {
     navigate('/');
@@ -101,7 +105,7 @@ export default function Navbar({navPosition,navTextStyle,navIcon,navBGColor}){
       <a href="https://www.google.com">THE BRAND</a>
       <a className='collections-s' onClick={navigateToCollections}>COLLECTIONS</a>
       <a href="https://www.openai.com">STORE</a>
-      <a href="https://www.github.com">EVENTS</a>
+      <a onClick={navigateTologin}>LOGIN</a>
     </div>
   </div>
 

@@ -17,7 +17,7 @@ export default function Collections() {
           drag="x"
           style={{x:450}}
           dragConstraints={{ left: -500, right: 470}}>
-          <div className="flex min-h-screen items-center justify-center bg-neutral-1000 -mt-14 -mb-14"> 
+          <div className="flex items-center justify-center bg-neutral-1000 m-20"> 
             {/* <div className="grid grid-cols-1 gap-7 md:grid-cols-3 lg:grid-cols-4"> */}
             <div className='flex gap-8'>
               <Cards name='hello world' pfp={img1} desc='qweretystsgsg'/>
