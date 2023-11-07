@@ -1,0 +1,65 @@
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    color: black;
+    border-radius: 10px;
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 80%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; /* Added this line */
+}
+
+.heading {
+    order: 1;
+    font-size: 40px;
+}
+
+.remove {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    width: 100%;
+}
+
+.watch-image {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: auto;
+}
+
+.watch-details {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.price {
+    text-align: right; 
+}
+
