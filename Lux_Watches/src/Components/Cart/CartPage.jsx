@@ -1,17 +1,14 @@
 import React from 'react'
-import Login from './Login'
 import Navbar from '../Navbar/Navbar'
+import Cart from './Cart'
 import Footer from '../Footer/Footer'
 
-
-export default function Loginpage({ backgroundColor }) {
+export default function CartPage({ backgroundColor }) {
   return (
-    <>
-      <div style={{ backgroundColor }}>
+    <div style={{ backgroundColor }}>
         <Navbar navPosition={{position: 'relative'}} navTextStyle={{color: 'black'}} navBGColor='black' navIcon={{background: 'black'}} navCartIcon='src\assets\cart-black.svg'/>
-        <Login/>
+        <Cart/>
         <Footer/>
-      </div>
-    </>
+    </div>
   )
 }

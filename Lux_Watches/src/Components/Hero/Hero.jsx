@@ -14,7 +14,7 @@ export default function Hero() {
     <div className="relative">
 
       {/* Importing Navbar with props */}
-      <Navbar navPosition={{position: 'absoulute'}} navTextStyle={{color: 'white'}} navBGColor='white' navIcon={{background: 'white'}}/>
+      <Navbar navPosition={{position: 'absoulute'}} navTextStyle={{color: 'white'}} navBGColor='white' navIcon={{background: 'white'}} navCartIcon='src\assets\cart.svg'/>
 
       <div className="relative lg:w-full ">
         <video src={vid1} type="video/mp4" autoPlay loop muted></video>
