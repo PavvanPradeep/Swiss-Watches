@@ -4,7 +4,7 @@ import './Navbar.css';
 
 
 // Props are passed as parameters
-export default function Navbar({navPosition,navTextStyle,navIcon,navBGColor}){
+export default function Navbar({navPosition,navTextStyle,navIcon,navBGColor,navCartIcon}){
 
   // The state of the sidenav is used to check for further conditions
     const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -51,6 +51,14 @@ export default function Navbar({navPosition,navTextStyle,navIcon,navBGColor}){
     navigate('/login');
   };
 
+  const navigateToCart = () => {
+    navigate('/cart');
+  };
+
+  const navigateToHomePage = () => {
+    navigate('/homepage');
+  }
+
   // Navigatet to home
   const navigateToHome = () => {
     navigate('/');
@@ -78,7 +86,7 @@ export default function Navbar({navPosition,navTextStyle,navIcon,navBGColor}){
 
       <div className='nav-center'>
         <div className='nav-text' style={navStyle}>
-          <button className='logo' onClick={navigateToHome}>LOGO</button>
+          <button className='logo' onClick={navigateToHome}>SWISS</button>
         </div>
       </div>
       
@@ -88,6 +96,11 @@ export default function Navbar({navPosition,navTextStyle,navIcon,navBGColor}){
           </div>
           <div className='nav-text' style={navStyle}>
             <button className='collections' onClick={navigateToCollections}>COLLECTIONS</button>
+          </div>
+          <div className='nav-text' style={navStyle}>
+            <button className='collections' onClick={navigateToCart}>
+              <img src={navCartIcon} alt='CART' className='svg-icon w-8 h-8' />
+            </button>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@
 }
 
 /* Consists of email and password */
-.form-boxes {
+.login-form-boxes {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -32,7 +32,7 @@
 }
 
 /* Line separator */
-.form-boxes::after {
+.login-form-boxes::after {
     content: "";
     position: absolute;
     bottom: -0px;
@@ -43,8 +43,8 @@
 }
 
 /* Part that mentions email and password */
-.form-boxes label,
-.form-boxes input {
+.login-form-boxes label,
+.login-form-boxes input {
     width: 500px;
     height: 50px;
     padding: 6px;
@@ -54,7 +54,7 @@
 }
 
 /* Email content */
-.form-boxes input {
+.login-form-boxes input {
     border: none;
     outline: none;
     margin-top: -0.625rem;
@@ -63,7 +63,7 @@
 }
 
 /* Placeholder text */
-.form-boxes input::placeholder {
+.login-form-boxes input::placeholder {
     color: rgb(0, 0, 0);
 }
 

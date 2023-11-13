@@ -4,12 +4,14 @@ import Footer from '../Footer/Footer'
 import Signup from './Signup'
 
 
-export default function SignupPage() {
+export default function SignupPage({ backgroundColor }) {
   return (
     <>
-      <Navbar navPosition={{position: 'relative'}} navTextStyle={{color: 'white'}} navBGColor='white' navIcon={{background: 'black'}}/>
-      <Signup/>
-      <Footer/>
+      <div style={{ backgroundColor }}>
+        <Navbar navPosition={{position: 'relative'}} navTextStyle={{color: 'black'}} navBGColor='black' navIcon={{background: 'black'}} navCartIcon='src\assets\cart-black.svg'/>
+        <Signup/>
+        <Footer/>
+      </div>
     </>
   )
 }
