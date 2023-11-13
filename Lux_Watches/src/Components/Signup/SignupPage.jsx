@@ -1,15 +1,15 @@
 import React from 'react'
-import Login from './Login'
 import Navbar from '../Navbar/Navbar'
 import Footer from '../Footer/Footer'
+import Signup from './Signup'
 
 
-export default function Loginpage({ backgroundColor }) {
+export default function SignupPage({ backgroundColor }) {
   return (
     <>
       <div style={{ backgroundColor }}>
         <Navbar navPosition={{position: 'relative'}} navTextStyle={{color: 'black'}} navBGColor='black' navIcon={{background: 'black'}} navCartIcon='src\assets\cart-black.svg'/>
-        <Login/>
+        <Signup/>
         <Footer/>
       </div>
     </>

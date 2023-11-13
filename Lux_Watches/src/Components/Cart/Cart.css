@@ -1,0 +1,105 @@
+.container {
+    margin: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: black;
+}
+
+.cart {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    /* padding: 2em; */
+    width: 60%;
+}
+
+.summary {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    margin-left: 10em;
+    width: 40%;
+    height: 20rem;
+    border-radius: 5px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Adjust shadow values as needed */
+}
+
+
+.order{
+    position: absolute;
+    bottom: 1em; /* Adjust this value as needed to control the distance from the bottom */
+    background-color: #007aff;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    height: 2em;
+    width: 80%;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; /* Added this line */
+}
+
+.heading {
+    order: 1;
+    font-size: 40px;
+}
+
+.remove {
+    order: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contents {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.card1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em;
+    margin-bottom: 1em;
+    width: 80%;
+}
+
+.watch-image {
+    display: flex;
+    align-items: center;
+    height: 200px;
+    width: auto;
+}
+
+.watch-details {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+.watch-details h1,
+.watch-details p,
+.watch-details button {
+  margin-bottom: 0.5em; /* Adjust the value to increase or decrease spacing */
+}
+
+
+.price {
+    align-self: flex-start;
+}
+
+.continue{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    /* underline */
+    text-decoration: underline;
+}
