@@ -5,10 +5,10 @@ export default function Stories() {
   return (
     <>
         <div className='m-14 flex relative'>
-            <div className='' style={{ height: '80vh', width:'80vh' }}>
+            <div className='' style={{ height: '45rem', width:'45rem' }}>
                   <img className="object-cover w-full h-full" src={img1}></img>
             </div>
-            <div className='m-5' style={{ height: '80vh', width:'80vh' }}>
+            <div className='m-5' style={{ height: '45rem', width:'45rem' }}>
                 <p className='text-white font-serif font-extrabold text-6xl italic'>ROLEX YACHT-MASTER</p>
                 <p className='text-white font-light text-lg mt-6 mb-4'>OYSTER PERPERTUAL</p>
                 <p className='text-zinc-300 font-extralight'>Inspired by the rich heritage that has bound Rolex to the world of yachting since the 1950s, 
@@ -20,7 +20,7 @@ export default function Stories() {
             </div>
         </div>
         <div className='m-14 flex relative'>
-            <div className='m-5' style={{ height: '80vh', width:'80vh' }}>
+            <div className='m-5' style={{ height: '45rem', width:'45rem' }}>
                 <p className='text-white font-serif font-extrabold text-6xl italic'>ROLEX EXPLORER-40</p>
                 <p className='text-white font-light text-lg mt-6 mb-4'>OYSTER PERPERTUAL</p>
                 <p className='text-zinc-300 font-extralight'>The Explorer range is expanded with the arrival of a new 40 mm model. Offering enhanced legibility, 
@@ -33,7 +33,7 @@ export default function Stories() {
                  Produced exclusively for Rolex, Oystersteel belongs to the 904L steel family – alloys that are commonly used in advanced-technology fields such as the aerospace and chemical industries. 
                 </p>
             </div>
-            <div className='' style={{ height: '80vh', width:'80vh' }}>
+            <div className='' style={{ height: '45rem', width:'45rem' }}>
                 <img className="object-cover w-full h-full" src={img2}></img>
             </div>
             

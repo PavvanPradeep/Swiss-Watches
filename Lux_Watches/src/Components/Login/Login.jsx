@@ -68,6 +68,45 @@ const Login = () => {
       
       };
 
+    //   function submitRegistration(e) {
+    //     e.preventDefault();
+    //     client.post(
+    //       "/auth/register",
+    //       {
+    //         email: email,
+    //         username: username,
+    //         password: password
+    //       }
+    //     ).then(function(res) {
+    //       client.post(
+    //         "/auth/auth/login",
+    //         {
+    //           email: email,
+    //           password: password
+    //         }
+    //       ).then(function(res) {
+    //         setCurrentUser(true);
+    //       });
+    //     });
+    //   }
+
+      function submitLogin(e) {
+        e.preventDefault();
+        client.post(
+          "/auth/auth/login",
+          {
+            email: email,
+            password: password
+          }
+        ).then(function(res) {
+          setCurrentUser(true);
+        });
+      }
+      if (currentUser) {
+        console.log("logged in");
+      
+      };
+
       
     return (
             <div className='form-container'>
@@ -78,12 +117,12 @@ const Login = () => {
                     </div>
                     <div className='login-form-boxes'>
                         <label htmlFor='email'>Email</label>
-                        <input type='text' name='email' id='email' className='bg-slate-50' placeholder='Enter your email address'/>
+                        <input type='text' name='email' id='email' className='bg-slate-50' placeholder='Enter your email address' value={email} onChange={e => setEmail(e.target.value)}/>
                     </div>
                     <div className='login-form-boxes'>
                         <label htmlFor='password'>Password</label>
                         <div className='password-input'>
-                            <input type={showPassword ? "text" : "password"} name='password' id='password' placeholder='Enter a password' />
+                            <input type={showPassword ? "text" : "password"} name='password' id='password' placeholder='Enter a password' value={password} onChange={e => setPassword(e.target.value)}/>
                             <button type='button' onClick={togglePasswordVisibility}>
                                 {showPassword ? "SHOW" : "HIDE"}
                             </button>
@@ -92,7 +131,7 @@ const Login = () => {
                     <div className='forgot-password'>
                         <a href='google.com'>Forgot Password?</a>
                     </div>
-                    <button className='button bg-black' type='submit'>LOGIN</button>
+                    <button className='button bg-black' type='submit' onClick={submitLogin}>LOGIN</button>
                 </form>
             </div>
     );
