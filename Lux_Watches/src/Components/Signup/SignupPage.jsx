@@ -10,7 +10,10 @@ export default function SignupPage({ backgroundColor }) {
       <div style={{ backgroundColor }}>
         <Navbar navPosition={{position: 'relative'}} navTextStyle={{color: 'black'}} navBGColor='black' navIcon={{background: 'black'}} navCartIcon='src\assets\cart-black.svg'/>
         <Signup/>
-        <Footer/>
+        <div className='mt-20'>
+          <Footer/>
+        </div>
+        
       </div>
     </>
   )

@@ -65,46 +65,7 @@ const Login = () => {
       }
       if (currentUser) {
         console.log("logged in");
-      
-      };
-
-    //   function submitRegistration(e) {
-    //     e.preventDefault();
-    //     client.post(
-    //       "/auth/register",
-    //       {
-    //         email: email,
-    //         username: username,
-    //         password: password
-    //       }
-    //     ).then(function(res) {
-    //       client.post(
-    //         "/auth/auth/login",
-    //         {
-    //           email: email,
-    //           password: password
-    //         }
-    //       ).then(function(res) {
-    //         setCurrentUser(true);
-    //       });
-    //     });
-    //   }
-
-      function submitLogin(e) {
-        e.preventDefault();
-        client.post(
-          "/auth/auth/login",
-          {
-            email: email,
-            password: password
-          }
-        ).then(function(res) {
-          setCurrentUser(true);
-        });
-      }
-      if (currentUser) {
-        console.log("logged in");
-      
+        alert('Logged in')
       };
 
       
