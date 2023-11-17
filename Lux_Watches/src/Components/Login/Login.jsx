@@ -29,28 +29,6 @@ const Login = () => {
         });
       }, []);
 
-    //   function submitRegistration(e) {
-    //     e.preventDefault();
-    //     client.post(
-    //       "/auth/register",
-    //       {
-    //         email: email,
-    //         username: username,
-    //         password: password
-    //       }
-    //     ).then(function(res) {
-    //       client.post(
-    //         "/auth/auth/login",
-    //         {
-    //           email: email,
-    //           password: password
-    //         }
-    //       ).then(function(res) {
-    //         setCurrentUser(true);
-    //       });
-    //     });
-    //   }
-
       function submitLogin(e) {
         e.preventDefault();
         client.post(
