@@ -1,7 +1,13 @@
 import React from 'react'
 import Cards from './Cards.jsx'
-import img1 from "../../assets/ryan-gosling.avif"
-import img2 from "../../assets/margot_rm.jpeg"
+import img1 from "../../assets/GIRARD_PERREGAUX_VINTAGE_1945.jpg"
+import img2 from "../../assets/GIRARD_PERREGAUX_MF_ALARM.jpeg"
+import img3 from "../../assets/GIRARD_PERREGAUX_2022_07_JULY_06_POST_a.jpg"
+import img4 from "../../assets/GIRARD_PERREGAUX_2022_07_JULY_06_POST_B.jpg"
+import img5 from "../../assets/GIRARD_PERREGAUX_Images_Bridge.jpg"
+import img6 from "../../assets/GIRARD_PERREGAUX_Images_Site_1966l.jpg"
+
+
 import { motion} from "framer-motion";
 export default function Collections() {
   return (
@@ -20,12 +26,12 @@ export default function Collections() {
           <div className="flex items-center justify-center bg-neutral-1000 m-20"> 
             {/* <div className="grid grid-cols-1 gap-7 md:grid-cols-3 lg:grid-cols-4"> */}
             <div className='flex gap-8'>
-              <Cards name='hello world' pfp={img1} desc='qweretystsgsg'/>
-              <Cards name='wassup' pfp={img2} desc='qweretystsgsg'/>
-              <Cards name='hello world' pfp={img1} desc='qweretystsgsg'/>
-              <Cards name='wassup' pfp={img2} desc='qweretystsgsg'/>
-              <Cards name='hello world' pfp={img1} desc='qweretystsgsg'/>
-              <Cards name='wassup' pfp={img2} desc='qweretystsgsg'/>
+              <Cards name='LAUREATO' pfp={img3} desc='qweretystsgsg'/>
+              <Cards name="CAT'S EYE" pfp={img4} desc='qweretystsgsg'/>
+              <Cards name='BRIDGES' pfp={img5} desc='qweretystsgsg'/>
+              <Cards name='1966' pfp={img6} desc='qweretystsgsg'/>
+              <Cards name='VINTAGE 1945' pfp={img1} desc='qweretystsgsg'/>
+              <Cards name='ALARM' pfp={img2} desc='qweretystsgsg'/>
             </div>
           </div>   
       </motion.div>

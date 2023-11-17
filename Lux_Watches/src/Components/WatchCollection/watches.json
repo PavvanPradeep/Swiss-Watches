@@ -1,0 +1,110 @@
+[
+    {
+        "id": 1,
+        "brand": "Rolex",
+        "name": "Day-Date 36 Everose Gold Green Dial",
+        "description": "Bold Elegance: Rolex Day-Date in Everose Gold with Green.",
+        "rating": 4.5,
+        "price": "10000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 2,
+        "brand": "Rolex",
+        "name": "Day-Date 36 Gold",
+        "description": "Timeless Classic: Rolex Day-Date 36 in Elegant Gold.",
+        "rating": 4.5,
+        "price": "20000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 3,
+        "brand": "Rolex",
+        "name": "Day-Date 36 White Gold Light Blue Dial",
+        "description": "Subtle Grace: Day-Date 36 in White Gold and Blue.",
+        "rating": 4.5,
+        "price": "15000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 4,
+        "brand": "Audemars Piguet",
+        "name": "Code 11.59 by Audemars Piguet",
+        "description": "Elegance Redefined: Modern Sophistication in Audemars Piguet's Masterpiece.",
+        "rating": 4.9,
+        "price": "45000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 5,
+        "brand": "Audemars Piguet",
+        "name": "Royal Oak Minute Repeater Supersonnerie",
+        "description": "Auditory Excellence: Royal Oak's Precision in Every Chime..",
+        "rating": 4.7,
+        "price": "40000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 6,
+        "brand": "Audemars Piguet",
+        "name": "Royal Oak Perpetual Calendar",
+        "description": "Timeless Functionality: Royal Oak's Perpetual Calendar Precision.",
+        "rating": 4.7,
+        "price": "42000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 7,
+        "brand": "Tag Heuer",
+        "name": "Carrera",
+        "description": "Racing Heritage: TAG Heuer's Carrera - Sporty Elegance.",
+        "rating": 4.8,
+        "price": "25000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 8,
+        "brand": "Tag Heuer",
+        "name": "Carrera Chronosprint x Porsche",
+        "description": "Speed Meets Style: TAG Heuer and Porsche Collaboration.",
+        "rating": 4.8,
+        "price": "30000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 9,
+        "brand": "Tag Heuer",
+        "name": "Carrera Date",
+        "description": "Classic Charm: Carrera Date Blends Style with Precision.",
+        "rating": 4.8,
+        "price": "250000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 10,
+        "brand": "Patek Philippe",
+        "name": "Patek Philippe Grand Complications 6300G-001",
+        "description": "Horological Opulence: Patek Philippe's Green Grand Complications.",
+        "rating": 5.0,
+        "price": "2500000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 11,
+        "brand": "Patek Philippe",
+        "name": "Patek Philippe Grand Complications 5531R-001",
+        "description": "Teal Elegance: Patek Philippe's Grand Complications in Teal.",
+        "rating": 5.0,
+        "price": "5000000.00",
+        "year": "2019-01-01"
+    },
+    {
+        "id": 12,
+        "brand": "Patek Philippe",
+        "name": "Patek Philippe Grand Complications 5905R-010",
+        "description": "Blue Mastery: Patek Philippe's Grand Complications in Rich Blue.",
+        "rating": 5.0,
+        "price": "6000000.00",
+        "year": "2019-01-01"
+    }
+]
