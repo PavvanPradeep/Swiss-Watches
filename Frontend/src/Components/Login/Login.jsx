@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
 axios.defaults.xsrfCookieName = 'csrftoken';
@@ -6,10 +7,16 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 axios.defaults.withCredentials = true;
 
 const client = axios.create({
-    baseURL: "http://127.0.0.1:8000"
+    baseURL: import.meta.env.VITE_BACKEND_URL
   });
   
 const Login = () => {
+
+    const navigate = useNavigate();
+
+    const navigateToSignup = () => {
+        navigate('/signup');
+    };
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -53,6 +60,9 @@ const Login = () => {
                 <form action=''>
                     <div className='login'>
                         <p>LOGIN</p>
+                    </div>
+                    <div className='dont-have-account'>
+                        <p>Don't have an account? <a className='login-s' onClick={navigateToSignup}>Signup</a></p>
                     </div>
                     <div className='login-form-boxes'>
                         <label htmlFor='email'>Email</label>

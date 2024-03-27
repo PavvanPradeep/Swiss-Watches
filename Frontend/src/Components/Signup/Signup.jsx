@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Signup.css';
 import axios from 'axios';
 
@@ -7,10 +8,19 @@ axios.defaults.xsrfHeaderName = 'X-CSRFToken';
 axios.defaults.withCredentials = true;
 
 const client = axios.create({
-  baseURL: "http://127.0.0.1:8000"
+  baseURL: import.meta.env.VITE_BACKEND_URL
 });
 
+
+
 const Signup = () => {
+
+  const navigate = useNavigate();
+
+const navigateToLogin = () => {
+  navigate('/login');
+};
+
   const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -88,6 +98,9 @@ const Signup = () => {
       <form onSubmit={handleSubmit}>
         <div className='signup'>
           <p>CREATE AN ACCOUNT</p>
+        </div>
+        <div className='have-account'>
+          <p>Already have an account? <a className='login-s' onClick={navigateToLogin}>Login</a></p>
         </div>
         <div className='form-boxes'>
           <label htmlFor='uname' className='font-bold'>Username</label>

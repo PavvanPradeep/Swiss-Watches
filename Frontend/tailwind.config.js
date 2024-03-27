@@ -17,10 +17,13 @@ export default {
       },
       colors:{
         'pale':'#f6f5f4'
+      },
+      transitionProperty: {
+        'height': 'height',
+        'width': 'width',
+        'spacing': 'margin, padding',
       }
-    },
+    } 
   },
   plugins: [],
-
-
 }

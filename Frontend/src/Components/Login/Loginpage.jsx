@@ -8,7 +8,7 @@ export default function Loginpage({ backgroundColor }) {
   return (
     <>
       <div style={{ backgroundColor }}>
-        <Navbar navPosition={{position: 'relative'}} navTextStyle={{color: 'black'}} navBGColor='black' navIcon={{background: 'black'}} navCartIcon='src\assets\cart-black.svg'/>
+        <Navbar navPosition={{position: 'relative'}} navTextStyle={{color: 'black'}} navBGColor='black' navIcon={{background: 'black'}} navCartIcon='public\cart-black.svg' navSearchIcon='search-black.svg'/>
         <Login/>
         <Footer/>
       </div>

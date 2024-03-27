@@ -35,7 +35,8 @@ class UserSerializer(serializers.ModelSerializer):
 class WatchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Watch
-        fields = '__all__'
+        fields = ['id', 'brand', 'name', 'description', 'more_description', 'rating', 'price', 'year']
+
 
 class CartSerializer(serializers.ModelSerializer):
 	# quantity = serializers.IntegerField(min_value=2)

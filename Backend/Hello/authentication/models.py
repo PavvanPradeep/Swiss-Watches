@@ -27,10 +27,10 @@ class Watch(models.Model):
     brand = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     description = models.TextField()
+    more_description = models.TextField()
     rating = models.FloatField()
     price = models.DecimalField(max_digits=10, decimal_places=2)
     year = models.DateField()
-    quantity_available = models.IntegerField(default=5)
     def __str__(self):
         return self.name
     
@@ -43,20 +43,15 @@ class Watch(models.Model):
 #     "year":"2019-01-01"
 # }
 
-# class Cart(models.Model):
-#     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
-#     watch_id = models.ForeignKey(Watch, on_delete=models.CASCADE)
-#     quantity = models.IntegerField()
-#     total_price = models.IntegerField()
-#     def __str__(self):
-#         return self.user_id.username + " " + self.watch_id.name
-
 class Cart(models.Model):
     user_id = models.ForeignKey(User, on_delete=models.CASCADE)
     watch_id = models.ForeignKey(Watch, on_delete=models.CASCADE)
-    item_id = models.CharField(max_length=100, unique=True, default='')  # new field
     quantity = models.IntegerField()
     total_price = models.IntegerField()
+
+    @property
+    def item_total(self):
+        return self.quantity * self.total_price
     def __str__(self):
         return self.user_id.username + " " + self.watch_id.name
     
