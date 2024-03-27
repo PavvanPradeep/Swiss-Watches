@@ -78,7 +78,9 @@ export default function App() {
               Swiss Collections
             </h6>
             <p>
-             We'll put off some random text here to make it look good
+            <a className="text-neutral-400">
+              Elevating Time, Capturing Elegance, Crafting Luxury Moments.
+            </a>
             </p>
           </div>
           <div className="">

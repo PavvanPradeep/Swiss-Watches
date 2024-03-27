@@ -1,16 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from "axios";
 import './Watch.css';
 import Image from './Image';
-import { ap_1159, royaloak_minute, royaloak_perpetual, carrera_date, carrera_porsche, carrera, daydate_green, daydate_gold, daydate_blue,patek_green,patek_teal,patek_blue} from "../WatchCollection/images" 
+import { ap_1159, cactus_jack, royaloak_perpetual, carrera_date, carrera_porsche, carrera, daydate_green, daydate_gold, daydate_blue,patek_green,patek_teal,patek_blue} from "../WatchCollection/images" 
 
 
 export default function Watch() {
 
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    },[]);
+
     const nameToVariableMap = {
         "Code 11.59 by Audemars Piguet": ap_1159,
-        "Royal Oak Minute Repeater Supersonnerie": royaloak_minute,
+        "Royal Oak Cactus Jack": cactus_jack,
         "Royal Oak Perpetual Calendar": royaloak_perpetual,
         "Carrera Date": carrera_date,
         "Carrera Chronosprint x Porsche": carrera_porsche,
@@ -27,6 +31,41 @@ export default function Watch() {
       const navigate = useNavigate();
       const [watches, setWatches] = useState([]);
       const [watchDetails, setWatchDetails] = useState({});
+      const [showCard, setShowCard] = useState(false);
+      const [isUserAuthenticated, setIsUserAuthenticated] = useState(false);
+
+      const isMounted = useRef(true);
+
+      useEffect(() => {
+        // Set the flag to true when the component mounts
+        isMounted.current = true;
+    
+        // Cleanup function to set the flag to false when the component unmounts
+        return () => {
+          isMounted.current = false;
+        };
+      }, []);
+    
+
+
+      const onViewCart = () => {
+        navigate('/cart');
+      };
+      
+      const AddedToCartCard = ({ watchDetails, onViewCart }) => {
+        return (
+          <div className="added-to-cart-card">
+            <p>Added to cart</p>
+            <div>
+              <img src={nameToVariableMap[watchDetails['name']]} alt={watchDetails['name']} />
+              <p>{watchDetails['name']}</p>
+              <p>{watchDetails['price']}</p>
+              <button onClick={onViewCart}>View Cart</button>
+            </div>
+          </div>
+        );
+      };
+      
 
     
       const id = location.state.id;
@@ -39,8 +78,8 @@ export default function Watch() {
         useEffect(() => {
             const fetchAllWatches = async () => {
                 try {
-                    const response = await axios.get('http://127.0.0.1:8000/auth/watches/');
-                    const userResponse = axios.get('http://127.0.0.1:8000/auth/hello');
+                    const response = await axios.get(import.meta.env.VITE_BACKEND_URL+"/auth/watches/");
+                    const userResponse = axios.get(import.meta.env.VITE_BACKEND_URL+"/auth/hello");
                     console.log("User response",userResponse.data);
                     setWatches(response.data);
                     console.log("All watches data received successfully:", response.data);
@@ -70,6 +109,34 @@ export default function Watch() {
 
 
         const saveToBackend = async () => {
+        
+            try {
+                // Check user authentication
+                const response = await axios.post('http://127.0.0.1:8000/auth/auth/login/', { email: 'hello@gmail.com', password: 'hello1234' });
+
+                setIsUserAuthenticated(true);
+          
+                // Rest of your saveToBackend function...
+                // Check for success or failure and take appropriate actions
+                if (response.status === 200) {
+                    // Login successful, perform necessary actions
+                    console.log("Login successful");
+                } else {
+                    // Login failed, display error message or take appropriate actions
+                    console.log("Login failed");
+                }
+              } catch (error) {
+                console.error("Error checking user authentication:", error);
+          
+                // Handle the case where the user is not authenticated
+                if (error.response && error.response.status === 401) {
+                  alert("Please login to add watches to the cart");
+                  // You may redirect the user to the login page or show a login modal here
+                }
+              }
+
+
+
             const confirmed = window.confirm("Added to cart");
             confirmed;
             try {
@@ -95,7 +162,19 @@ export default function Watch() {
             } catch (error) {
                 console.error("Error posting cart data:", error);
                 console.error("Error details:", error.response ? error.response.data : error.message);
+                console.error(error.response.data)
+                if(error.response.data.error === "Quantity must be 1"){
+                    alert("Item already in cart");
+                }
             }
+
+            // setShowCard(true);
+            // // document.body.classList.add('blur');
+
+            // setTimeout(() => {
+            //     setShowCard(false);
+            //     // document.body.classList.remove('blur');
+            // }, 3000);
         };
         
         
@@ -105,12 +184,13 @@ export default function Watch() {
 
     return (
         <>
+            {showCard && <AddedToCartCard watchDetails={watchDetails} onViewCart={() => navigate('/cart')} />}
             <div className='watch-container'>
-                <div className='image'>
+                <div className='image float-left bg-pale h-full'>
                     <Image src={nameToVariableMap[watchDetails['name']]}/>
                 </div>
-                <div className='description'>
-                    <p>{watchDetails['name']}</p>
+                <div className='description float-right'>
+                    <p><div className='text-3xl font-aliquam'>{watchDetails['name']}</div></p>
                     <br />
                     <p>{watchDetails['price']}</p>
                     <br />
@@ -119,16 +199,16 @@ export default function Watch() {
                     <span><i className="fas fa-share" aria-hidden="true"></i></span><br />
                     <div className='assurance'>
                         <p>Two Year Warranty</p>
-                        <br />
+                        <br/>
                         <p>Swiss made</p>
                     </div>
                 </div>
             </div>
 
-        <div className='more-description'>
-            <p>Description</p>
-            <p>The Code 11.59 by Audemars Piguet Ultra-Complication Universelle (RD#4) is a horological marvel that pushes the boundaries of what is possible in watchmaking. This timepiece represents the epitome of Audemars Piguet's technical prowess and innovative spirit. Its ultra-complication features a stunning array of intricate functions, seamlessly integrated into a singular masterpiece. From celestial displays to intricate chronometric functions, every detail of this watch is a testament to Audemars Piguet's dedication to precision and excellence. The design is a harmonious blend of contemporary elegance and cutting-edge engineering, demonstrating Audemars Piguet's commitment to both form and function. The Ultra-Complication Universelle (RD#4) is not just a watch; it is a testament to the heights that can be achieved when craftsmanship and innovation come together in perfect harmony. This timepiece stands as a beacon of excellence in the world of haute horlogerie, a true collector's dream for those who appreciate the pinnacle of watchmaking artistry.</p>
-        </div>
+            <div className='more-description'>
+                <p className='desc-header'>Description</p>
+                <p className='desc-contents'>{watchDetails['more_description']}</p>
+            </div>
         </>
     );
 }

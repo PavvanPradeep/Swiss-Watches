@@ -4,8 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* margin-bottom: 100px; */
-    height: 100vh;
+    height: auto;
     background-color: rgb(248, 250, 252);
 }
 
@@ -17,6 +16,10 @@
     align-items: center;
     font-size: 40px;
     color: black;
+}
+
+.forgot-password{
+    color: black
 }
 
 /* Consists of email and password */
@@ -116,4 +119,60 @@
 .button:hover{
     background-color: rgb(139, 139, 139);
     transition: box-shadow 0.5s ease-in-out;
+}
+
+.dont-have-account{
+    margin-top: 20px;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(221,221,221);
+
+}
+
+/* ... existing styles ... */
+
+/* Responsive styles for smaller screens */
+@media only screen and (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .login-form-boxes,
+    .button {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .login-form-boxes::after {
+        width: 100%;
+    }
+
+    .login-form-boxes label,
+    .login-form-boxes input {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .login {
+        font-size: 30px; /* Smaller font size for the login text */
+    }
+}
+
+/* Additional media query for even smaller screens */
+@media only screen and (max-width: 480px) {
+    .login-form-boxes {
+        width: 90%; /* Allow some padding on the smallest screens */
+        margin: 30px 0; /* Smaller margin */
+    }
+
+    .login {
+        font-size: 24px; /* Even smaller font size for the login text */
+    }
+
+    .button {
+        height: 50px; /* Smaller button height */
+    }
+
+    .password-input button {
+        width: 40px; /* Smaller button width */
+    }
 }

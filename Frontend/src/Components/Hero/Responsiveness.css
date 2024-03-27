@@ -1,0 +1,36 @@
+.video-container {
+    position: relative;
+    width: 100%; /* Set a default width for the container */
+    /* max-width: 100%; */
+    margin: 0 auto; /* Center the container horizontally */
+    overflow: hidden;
+  }
+  
+  .responsive-video {
+    width: 100%; /* Make the video fill the container width by default */
+    height: 100%; /* Make the video fill the container height by default */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+  }
+  
+  @media (max-width: 800px) {
+    /* Apply styles for screens with a maximum width of 600px (adjust as needed) */
+    .video-container {
+      height: 700px; /* Set a fixed height for the container on smaller screens */
+    }
+  
+    .responsive-video {
+      width: 150%; /* Increase the width of the video to make it appear zoomed */
+      height: 150%; /* Increase the height of the video to make it appear zoomed */
+    }
+  }
+  
+  .text-overlay {
+    position: absolute;
+    bottom: 0; /* Adjust as needed, e.g., 10px for some space */
+    width: 100%;
+    text-align: center;
+    color: white; /* Set text color */
+    background: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background for better readability */
+    padding: 10px; /* Add padding for better visibility */
+    box-sizing: border-box;
+  }

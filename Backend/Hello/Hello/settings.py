@@ -11,10 +11,17 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# At the end of file. add these lines
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+MEDIA_URLS ='/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -25,10 +32,19 @@ SECRET_KEY = 'django-insecure-+rotbt()bhfk=7c45amys00#8s*9f$z9z95o)lgs^ldvr3b(1@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
+
 
 
 # Application definition
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+        # ... any other authentication backends you're using
+    ],
+    # ... other settings
+}
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -48,7 +64,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -56,7 +71,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Hello.urls'
 CORS_ORIGIN_ALLOW_ALL = True
-CORS_ALLOW_ORIGIN = 'http://localhost:5173'
+CORS_ALLOW_ORIGIN = [
+    "http://localhost:5173", 
+    "https://your-vercel-app.vercel.app",
+    "https://swiss-watches-backend.vercel.app/",
+    "https://swiss-watches-backend-kgrmzcmll-mayankpm.vercel.app/"
+]
 CORS_ALLOW_CREDENTIALS = True
 
 CORS_ALLOW_METHODS = [
@@ -94,16 +114,20 @@ WSGI_APPLICATION = 'Hello.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# settings.py
+from decouple import config
+
 DATABASES = {
-	'default': {
-		'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'test',
-		'USER': '',
-		'PASSWORD': '',
-		'HOST':'localhost',
-		'PORT':'3306',
-	}
+    'default': {
+        'ENGINE': config('DB_ENGINE'),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
+    }
 }
+
 
 
 AUTH_USER_MODEL = 'authentication.User'

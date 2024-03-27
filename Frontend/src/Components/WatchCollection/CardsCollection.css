@@ -1,11 +1,32 @@
-
 .container {
     display: grid;
     margin: auto;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     justify-items: center;
     align-items: center;
     color: black;
     justify-content: center;
 }
 
+.card {
+    /* Set your initial card styles here */
+
+    /* For larger screens (lg) */
+    width: 100%;
+    @media (min-width: 1024px) {
+        width: 300px; /* Adjust the width as needed */
+        height: 400px; /* Adjust the height as needed */
+    }
+
+    /* For medium screens (md) */
+    @media (max-width: 1023px) and (min-width: 768px) {
+        width: 250px; /* Adjust the width as needed */
+        height: 350px; /* Adjust the height as needed */
+    }
+
+    /* For small screens (sm) */
+    @media (max-width: 767px) {
+        width: 100%; /* Take up the full width of the screen */
+        height: auto; /* Allow height to adjust based on content */
+    }
+}
